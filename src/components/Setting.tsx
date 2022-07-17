@@ -8,7 +8,7 @@ type SettingType = {
     setMax: (value: number) => void
     setButton: () => void
     error: string | null
-    viability: string
+    viability: boolean
 }
 
 function Setting(props: SettingType) {
@@ -24,7 +24,7 @@ function Setting(props: SettingType) {
     }
 
     return (
-        <div className={props.viability}>
+        <div className={props.viability?"block disable":"block"}>
             <div className="input-setting">
                 <div>
                     <span>start number: </span>

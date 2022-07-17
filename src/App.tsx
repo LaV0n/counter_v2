@@ -12,7 +12,7 @@ function App() {
     let [maxNumber, setMaxNumber] = useState<number>(max !== null ? JSON.parse(max) : 0);
 
     let [counter, setCounter] = useState<number>(startNumber);
-
+    let [classSetting,setClassSetting]=useState(true)
     let error: string | null = null;
 
     if (startNumber >= maxNumber || startNumber < 0) {
@@ -35,11 +35,11 @@ function App() {
         resetButton();
         localStorage.setItem("startNumber", JSON.stringify(startNumber));
         localStorage.setItem("maxNumber", JSON.stringify(maxNumber));
-        setClassSetting("block disable")
+        setClassSetting(true)
     }
-    let [classSetting,setClassSetting]=useState('block disable')
+
     const startSetting = ()=>{
-        setClassSetting( "block")
+        setClassSetting( false)
     }
 
     return (
@@ -53,6 +53,7 @@ function App() {
                      addButton={addButton}
                      error={error}
                      setButton={startSetting}
+                     viability={classSetting}
             />
         </div>
     );

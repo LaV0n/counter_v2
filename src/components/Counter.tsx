@@ -9,6 +9,7 @@ type CounterType = {
     resetButton: () => void
     error: string | null
     setButton: () => void
+    viability: boolean
 }
 
 function Counter(props: CounterType) {
@@ -24,7 +25,7 @@ function Counter(props: CounterType) {
     }
 
     return (
-        <div className="block">
+        <div className= {props.viability?"block":"block disable"}>
             <div
                 className={props.error ? "counter incorrect-message" : (props.counter !== props.maxNumber ? "counter" : " counter last-number")}>
                 {props.error ? props.error : props.counter}
