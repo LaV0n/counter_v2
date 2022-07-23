@@ -16,10 +16,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    visibility: visible;
+
 }
 .disable {
-    visibility: hidden;
+    display: none;
 }
 
 .counter {

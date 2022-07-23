@@ -15,7 +15,7 @@ function App() {
     let [classSetting,setClassSetting]=useState(true)
     let error: string | null = null;
 
-    if (startNumber >= maxNumber || startNumber < 0) {
+    if (startNumber >= maxNumber || startNumber < 0 || isNaN(startNumber) || isNaN(maxNumber)) {
         error = "incorrect entry"
     }
 
@@ -51,7 +51,6 @@ function App() {
             />
             <Counter startNumber={startNumber} maxNumber={maxNumber} counter={counter} resetButton={resetButton}
                      addButton={addButton}
-                     error={error}
                      setButton={startSetting}
                      viability={classSetting}
             />
